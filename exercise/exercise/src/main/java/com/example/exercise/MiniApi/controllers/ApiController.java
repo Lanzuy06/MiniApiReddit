@@ -57,8 +57,8 @@ public class ApiController {
     public ResponseEntity<Comments> updateComment(@PathVariable Long postId, @PathVariable Long commentId,
                                                  @RequestBody Comments updatedComment) {
 
-        Comments c = postsService.updateComment(postId, commentId, updatedComment.getComment());
-        return c != null ? ResponseEntity.ok(c) : ResponseEntity.notFound().build();
+        Comments comments = postsService.updateComment(postId, commentId, updatedComment.getComment());
+        return comments != null ? ResponseEntity.ok(comments) : ResponseEntity.notFound().build();
 
     }
 
